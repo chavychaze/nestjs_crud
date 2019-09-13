@@ -8,13 +8,11 @@ export class LotocController {
 
     @Get()
     index(): Promise<Lotoc[]> {
-        console.log('Get all');
         return this.lotocService.findAll();
     }
 
     @Post('/create')
     async create(@Body() lotocData: Lotoc): Promise<any> {
-        console.log(`Create ${lotocData}`);
         return this.lotocService.create(lotocData);
     }
 
